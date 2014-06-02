@@ -85,9 +85,9 @@ object ProcessRunnerPlugin extends Plugin {
       |  loglevel = "OFF"
       |  actor {
       |    debug {
-      |      receive = on
-      |      autoreceive = on
-      |      lifecycle = on
+      |      receive = off
+      |      autoreceive = off
+      |      lifecycle = off
       |    }
       |  }
       |}

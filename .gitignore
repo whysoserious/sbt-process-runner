@@ -1,0 +1,47 @@
+._*
+.DS_Store
+.DS_Store?
+.ensime
+.ensime~
+.ensime_lucene/
+.history
+.idea_modules/
+.idea/
+.metadata/
+.sass-cache/
+.Spotlight-V100
+.Trashes
+*.csv
+*.iml
+*.orig
+*.pyc
+*.scala#
+*.sw
+*.tgz
+/.idea/
+/project/boot/
+/project/plugins/project
+lib_managed/
+
+src_managed/
+target/
+test-output/
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+
+# Eclipse-specific ignores
+.cache
+.classpath
+.project
+.settings/
+
+# VIM ignores
+*.swo
+*.swp
+
+# Emacs
+*~
+*#
+.#*

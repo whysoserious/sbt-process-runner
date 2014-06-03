@@ -4,7 +4,7 @@ import Keys._
 object Build extends Build {
 
   lazy val commonSettings =  Seq(
-    version := "0.7.17-SNAPSHOT",
+    version := "0.7.18-SNAPSHOT",
     scalaVersion := "2.10.4",
     organizationHomepage := Some(url("http://scalac.io")),
     publishMavenStyle := false,

@@ -30,7 +30,7 @@ object ProcessRunnerPlugin extends Plugin {
     val akkaConfig = SettingKey[String]("akka-config", "Configuration of ActorSystem")
     val actorSystem = SettingKey[ActorSystem]("actor-system", "The ActorSystem")
     val processInfoMap = SettingKey[Map[String, ProcessData]]("process-info-map", "Map of ProcessInfo objects")
-    val messageTimeout = SettingKey[FiniteDuration]("message-timeout-in", "TODO")
+    val messageTimeout = SettingKey[FiniteDuration]("message-timeout-in", "Message timeout for actor messages")
     val start = inputKey[Option[StartInfo]]("Starts a process")
     val stop = inputKey[Option[StopInfo]]("Stops a process")
     val status = inputKey[Option[ProcessState]]("Displays status of a process")

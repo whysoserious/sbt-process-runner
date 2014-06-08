@@ -2,7 +2,7 @@
 
 ### Installation
 
-#### 1. In your `plugins.sbt`:
+#### 1. In your [plugins.sbt](https://github.com/whysoserious/sbt-process-runner/blob/master/test-project%2Fproject%2Fplugins.sbt):
 
 ```scala
 lazy val root = project.in( file(".") ).dependsOn( sbtProcessRunnerPlugin )
@@ -47,7 +47,7 @@ You can see whole example [here](https://github.com/whysoserious/sbt-process-run
 
 ### Features:
 
-#### New commands (_based on a Sleeper example):
+#### New commands (based on a Sleeper example):
 
 * `process-runner:status sleeper`: check status of the process - `Idle`, `Starting` or `Running`.
 * `process-runner:start sleeper`: start process
@@ -58,7 +58,9 @@ You can see whole example [here](https://github.com/whysoserious/sbt-process-run
 * `process-runner:akkaConfig`: Yes, this plugin starts its own [ActorSystem](http://doc.akka.io/docs/akka/2.3.3/general/actor-systems.html). This is its configuration.
 * There are a few more settings defined in a Plugin (check [here](https://github.com/whysoserious/sbt-process-runner/blob/master/sbt-process-runner%2Fsrc%2Fmain%2Fscala%2FProcessRunnerPlugin.scala#L28-L37)) but usually you won't need to change them.
 
-### Example 1 _Sleeper_
+#### Flexible ProcessInfo
+
+### Example 1: _Sleeper_
 Run `test-project`:
 ```bash
 $ cd test-project
@@ -89,7 +91,7 @@ In this example we 'll use a [Sleeper](https://github.com/whysoserious/sbt-proce
 [success] Total time: 0 s, completed Jun 8, 2014 6:38:11 PM
 ```
 
-### Example 2 _Listener_
+### Example 2: _Listener_
 
 Here, we 'll start a process which listens on a port: A [Listener](https://github.com/whysoserious/sbt-process-runner/blob/master/test-project/project/Build.scala#L35-L59).
 

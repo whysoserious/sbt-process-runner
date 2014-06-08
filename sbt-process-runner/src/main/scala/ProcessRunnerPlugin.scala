@@ -1,4 +1,4 @@
-package jz.sbt.processrunner
+package io.scalac.sbt.processrunner
 
 import sbt._
 import Keys._
@@ -13,18 +13,14 @@ import akka.util.Timeout._
 
 import com.typesafe.config.ConfigFactory
 
-import jz.processrunner.ProcessController._
-import jz.processrunner.{ProcessInfo, ProcessController}
+import io.scalac.processrunner.ProcessController._
+import io.scalac.processrunner.{ProcessInfo, ProcessController}
 
 import scala.concurrent.duration.{FiniteDuration, Duration}
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.{Await, Future}
 import scala.Console._
 
-//TODO cross build
-//  crossBuildingSettings
-//  CrossBuilding.crossSbtVersions := Seq("0.12", "0.13")
-//  addSbtPlugin("net.virtual-void" % "sbt-cross-building" % "0.8.1")
 object ProcessRunnerPlugin extends Plugin {
 
   val ProcessRunner = config("process-runner") describedAs "Description of scope"

@@ -60,7 +60,35 @@ You can see whole example [here](https://github.com/whysoserious/sbt-process-run
 * `process-runner:akkaConfig`: Yes, this plugin starts its own [ActorSystem](http://doc.akka.io/docs/akka/2.3.3/general/actor-systems.html). This is its configuration.
 * There are a few more settings defined in a Plugin (check [here](https://github.com/whysoserious/sbt-process-runner/blob/master/sbt-process-runner%2Fsrc%2Fmain%2Fscala%2FProcessRunnerPlugin.scala#L28-L37)) but usually you won't need to change them.
 
-#### Flexible ProcessInfo
+#### Flexible [ProcessInfo](https://github.com/whysoserious/sbt-process-runner/blob/master/process-runner%2Fsrc%2Fmain%2Fscala%2Fjz%2Fio.scalac.processrunner%2FProcessInfo.scala) trait:
+
+```scala
+trait ProcessInfo {
+
+  def id: String
+
+  def processBuilder: ProcessBuilder
+
+  def isStarted: Boolean
+
+  def applicationName: String = id
+
+  def startupTimeout: FiniteDuration = 5.seconds
+
+  def checkInterval: FiniteDuration = 500.milliseconds
+
+  def beforeStart(): Unit = {}
+
+  def afterStart(): Unit = {}
+
+  def beforeStop(): Unit = {}
+
+  def afterStop(): Unit = {}
+
+  override def toString = applicationName
+
+}
+```
 
 ### Example 1: _Sleeper_
 Run `test-project`:

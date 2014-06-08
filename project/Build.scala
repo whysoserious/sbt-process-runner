@@ -22,7 +22,7 @@ object Build extends Build {
     id = "process-runner",
     base = file("process-runner"),
     settings = commonSettings ++ Seq(
-      organization := "io.scalac.processrunner",
+      organization := "io.scalac",
       libraryDependencies ++= Seq(
         "com.typesafe.akka" %% "akka-actor"   % V.akka,
         "com.typesafe.akka" %% "akka-testkit" % V.akka      % "test",
@@ -37,7 +37,7 @@ object Build extends Build {
     settings = commonSettings ++ Seq(
       sbtPlugin := true,
       name := "sbt-process-runner",
-      organization := "io.scalac.sbt.processrunner"
+      organization := "io.scalac"
     )
   ).dependsOn(processRunner)
 

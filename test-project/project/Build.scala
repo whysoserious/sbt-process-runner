@@ -2,9 +2,9 @@
 import sbt._
 import Keys._
 
-import jz.processrunner.ProcessInfo
-import jz.sbt.processrunner.ProcessRunnerPlugin
-import jz.sbt.processrunner.ProcessRunnerPlugin.ProcessRunner
+import io.scalac.processrunner._
+import io.scalac.sbt.processrunner.ProcessRunnerPlugin
+import ProcessRunnerPlugin._
 import ProcessRunnerPlugin.Keys._
 
 import java.net.Socket

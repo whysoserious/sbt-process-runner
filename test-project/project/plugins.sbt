@@ -5,4 +5,4 @@ lazy val sbtProcessRunnerPlugin = ProjectRef(
   "sbt-process-runner"
 )
 
-addSbtPlugin("jz.sbt.processrunner" %% "sbt-process-runner" % "0.7.18-SNAPSHOT")
+addSbtPlugin("io.scalac.sbt.processrunner" %% "sbt-process-runner" % "0.7.19-SNAPSHOT")

@@ -9,6 +9,7 @@ object Build extends Build {
     organizationHomepage := Some(url("http://scalac.io")),
     publishMavenStyle := false,
     startYear := Some(2014),
+    organization := "io.scalac",
     homepage := Some(url("https://github.com/whysoserious/sbt-process-runner")),
     scalacOptions := Seq("-deprecation", "-feature", "-encoding", "utf8", "-language:postfixOps")
   )
@@ -21,8 +22,7 @@ object Build extends Build {
   lazy val processRunner = Project(
     id = "process-runner",
     base = file("process-runner"),
-    settings = commonSettings ++ Seq(
-      organization := "io.scalac",
+    settings = commonSettings ++ Seq(      
       libraryDependencies ++= Seq(
         "com.typesafe.akka" %% "akka-actor"   % V.akka,
         "com.typesafe.akka" %% "akka-testkit" % V.akka      % "test",
@@ -36,8 +36,7 @@ object Build extends Build {
     base = file("sbt-process-runner"),
     settings = commonSettings ++ Seq(
       sbtPlugin := true,
-      name := "sbt-process-runner",
-      organization := "io.scalac"
+      name := "sbt-process-runner"
     )
   ).dependsOn(processRunner)
 

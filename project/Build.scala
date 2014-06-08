@@ -22,7 +22,7 @@ object Build extends Build {
     id = "process-runner",
     base = file("process-runner"),
     settings = commonSettings ++ Seq(
-      organization := "io.scalac",
+      organization := "io.scalac.processrunner",
       libraryDependencies ++= Seq(
         "com.typesafe.akka" %% "akka-actor"   % V.akka,
         "com.typesafe.akka" %% "akka-testkit" % V.akka      % "test",

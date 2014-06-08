@@ -4,6 +4,7 @@
 
 #### 1. In your [plugins.sbt](https://github.com/whysoserious/sbt-process-runner/blob/master/test-project%2Fproject%2Fplugins.sbt):
 
+
 ```scala
 lazy val root = project.in( file(".") ).dependsOn( sbtProcessRunnerPlugin )
 
@@ -14,6 +15,7 @@ lazy val sbtProcessRunnerPlugin = ProjectRef(
 
 addSbtPlugin("io.scalac" %% "sbt-process-runner" % "0.7.19-SNAPSHOT")
 ```
+
 
 #### 2. Create [ProcessInfo](https://github.com/whysoserious/sbt-process-runner/blob/master/process-runner/src/main/scala/jz/io.scalac.processrunner/ProcessInfo.scala#L7-L31) object(s) in your `Build.scala`:
 

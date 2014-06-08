@@ -23,7 +23,7 @@ import scala.Console._
 
 object ProcessRunnerPlugin extends Plugin {
 
-  val ProcessRunner = config("process-runner") describedAs "Description of scope"
+  val ProcessRunner = config("process-runner") describedAs "Scope for ProcessRunnerPlugin"
 
   object Keys {
     val processInfoList = SettingKey[Seq[ProcessInfo]]("process-info-list", "Set of ProcessInfo objects")

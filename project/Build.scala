@@ -37,7 +37,7 @@ object Build extends Build {
     settings = commonSettings ++ Seq(
       sbtPlugin := true,
       name := "sbt-process-runner",
-      organization := "jz.sbt.processrunner"
+      organization := "io.scalac.sbt.processrunner"
     )
   ).dependsOn(processRunner)
 

@@ -1,9 +1,13 @@
 ## Process Runner plugin for SBT 0.13+
 
+This plugin allows to create, start and stop your own applications from sbt console. This is very useful for creating an environment for integration tests. Example workflow in SBT could look like this:
+```sbt
+> ; process-runner:start rabbitmq; it:test; process-runner:stop rabbitmq
+```
+
 ### Installation
 
 #### 1. In your [plugins.sbt](https://github.com/whysoserious/sbt-process-runner/blob/master/test-project%2Fproject%2Fplugins.sbt):
-
 
 ```scala
 lazy val root = project.in( file(".") ).dependsOn( sbtProcessRunnerPlugin )
@@ -15,8 +19,7 @@ lazy val sbtProcessRunnerPlugin = ProjectRef(
 
 addSbtPlugin("io.scalac" %% "sbt-process-runner" % "0.7.19-SNAPSHOT")
 ```
-
-
+  
 #### 2. Create [ProcessInfo](https://github.com/whysoserious/sbt-process-runner/blob/master/process-runner/src/main/scala/jz/io.scalac.processrunner/ProcessInfo.scala#L7-L31) object(s) in your `Build.scala`:
 
 ```scala
@@ -53,7 +56,7 @@ You can see whole example [here](https://github.com/whysoserious/sbt-process-run
 
 * `process-runner:status sleeper`: check status of the process - `Idle`, `Starting` or `Running`.
 * `process-runner:start sleeper`: start process
-* `process-runner:stop`: stop process
+* `process-runner:stop sleeper`: stop process
 
 #### New settings:
 * `process-runner:processInfoList`: Displays registered processRunners.

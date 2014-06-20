@@ -1,5 +1,6 @@
 import sbt._
 import Keys._
+import com.typesafe.sbt.SbtGit._
 
 object Build extends Build {
 
@@ -11,7 +12,8 @@ object Build extends Build {
     startYear := Some(2014),
     organization := "io.scalac",
     homepage := Some(url("https://github.com/whysoserious/sbt-process-runner")),
-    scalacOptions := Seq("-deprecation", "-feature", "-encoding", "utf8", "-language:postfixOps")
+    scalacOptions := Seq("-deprecation", "-feature", "-encoding", "utf8", "-language:postfixOps"),
+    showCurrentGitBranch
   )
 
   object V {
@@ -34,7 +36,7 @@ object Build extends Build {
   lazy val sbtProcessRunner = Project(
     id = "sbt-process-runner",
     base = file("sbt-process-runner"),
-    settings = commonSettings ++ Seq(
+    settings = commonSettings ++ versionWithGit ++ Seq(
       sbtPlugin := true,
       name := "sbt-process-runner"
     )

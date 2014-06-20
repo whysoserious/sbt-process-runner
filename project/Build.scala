@@ -5,7 +5,7 @@ import com.typesafe.sbt.SbtGit._
 object Build extends Build {
 
   lazy val commonSettings =  Seq(
-    version := "0.7.19-SNAPSHOT",
+    version := "0.8",
     scalaVersion := "2.10.4",
     organizationHomepage := Some(url("http://scalac.io")),
     publishMavenStyle := false,

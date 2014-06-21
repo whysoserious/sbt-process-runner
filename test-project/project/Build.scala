@@ -1,11 +1,7 @@
-
 import sbt._
 import Keys._
 
-import io.scalac.processrunner._
-import io.scalac.sbt.processrunner.ProcessRunnerPlugin
-import ProcessRunnerPlugin._
-import ProcessRunnerPlugin.Keys._
+import io.scalac.sbt.processrunner.{ProcessRunnerPlugin, ProcessInfo}
 
 import java.net.Socket
 
@@ -57,6 +53,9 @@ object Build extends Build {
     }
     override def applicationName: String = "Listener"
   }
+
+  import ProcessRunnerPlugin.ProcessRunner
+  import ProcessRunnerPlugin.Keys.processInfoList
 
   lazy val testProject = Project(
     id = "test-project",

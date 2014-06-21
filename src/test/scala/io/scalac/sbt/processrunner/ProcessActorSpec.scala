@@ -16,7 +16,7 @@ import scala.sys.process._
 
 object ProcessControllerSpec {
 
-  import io.scalac.processrunner.ProcessController._
+  import io.scalac.sbt.processrunner.ProcessController._
 
   def immediatelyStarting(implicit system: ActorSystem): ActorRef = spawnProcessController {
     new ProcessInfo {

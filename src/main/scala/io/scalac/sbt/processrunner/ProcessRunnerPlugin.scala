@@ -13,8 +13,8 @@ import akka.util.Timeout._
 
 import com.typesafe.config.ConfigFactory
 
-import io.scalac.processrunner.ProcessController._
-import io.scalac.processrunner.{ProcessInfo, ProcessController}
+import io.scalac.sbt.processrunner.ProcessController._
+import io.scalac.sbt.processrunner._
 
 import scala.concurrent.duration.{FiniteDuration, Duration}
 import scala.concurrent.ExecutionContext.Implicits.global

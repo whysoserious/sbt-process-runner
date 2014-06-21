@@ -10,17 +10,15 @@ This plugin allows to create, start and stop your own applications from sbt cons
 #### 1. In your [plugins.sbt](https://github.com/whysoserious/sbt-process-runner/blob/master/test-project%2Fproject%2Fplugins.sbt):
 
 ```scala
-lazy val root = project.in( file(".") ).dependsOn( sbtProcessRunnerPlugin )
+resolvers += Resolver.url(
+  "bintray-sbt-plugin-releases",
+  url("http://dl.bintray.com/whysoserious/sbt-process-runner/"))(
+    Resolver.ivyStylePatterns)
 
-lazy val sbtProcessRunnerPlugin = ProjectRef(
-  uri("https://github.com/whysoserious/sbt-process-runner.git"),
-  "sbt-process-runner"
-)
-
-addSbtPlugin("io.scalac" %% "sbt-process-runner" % "0.7.19-SNAPSHOT")
+addSbtPlugin("io.scalac" % "sbt-process-runner" % "0.8.1")
 ```
   
-#### 2. Create [ProcessInfo](https://github.com/whysoserious/sbt-process-runner/blob/master/process-runner/src/main/scala/jz/io.scalac.processrunner/ProcessInfo.scala#L7-L31) object(s) in your `Build.scala`:
+#### 2. Create [ProcessInfo](https://github.com/whysoserious/sbt-process-runner/blob/merging-projects/src%2Fmain%2Fscala%2Fio%2Fscalac%2Fsbt%2Fprocessrunner%2FProcessInfo.scala#L7-L31) object(s) in your `Build.scala`:
 
 ```scala
 object Sleeper extends ProcessInfo {
@@ -61,9 +59,9 @@ You can see whole example [here](https://github.com/whysoserious/sbt-process-run
 #### New settings:
 * `process-runner:processInfoList`: Displays registered processRunners.
 * `process-runner:akkaConfig`: Yes, this plugin starts its own [ActorSystem](http://doc.akka.io/docs/akka/2.3.3/general/actor-systems.html). This is its configuration.
-* There are a few more settings defined in a Plugin (check [here](https://github.com/whysoserious/sbt-process-runner/blob/master/sbt-process-runner%2Fsrc%2Fmain%2Fscala%2FProcessRunnerPlugin.scala#L28-L37)) but usually you won't need to change them.
+* There are a few more settings defined in a Plugin (check [here](hhttps://github.com/whysoserious/sbt-process-runner/blob/merging-projects/src%2Fmain%2Fscala%2Fio%2Fscalac%2Fsbt%2Fprocessrunner%2FProcessRunnerPlugin.scala#L29-L36)) but usually you won't need to change them.
 
-#### Flexible [ProcessInfo](https://github.com/whysoserious/sbt-process-runner/blob/master/process-runner%2Fsrc%2Fmain%2Fscala%2Fjz%2Fio.scalac.processrunner%2FProcessInfo.scala) trait:
+#### Flexible [ProcessInfo](https://github.com/whysoserious/sbt-process-runner/blob/merging-projects/src%2Fmain%2Fscala%2Fio%2Fscalac%2Fsbt%2Fprocessrunner%2FProcessInfo.scala) trait:
 
 ```scala
 trait ProcessInfo {
@@ -121,7 +119,7 @@ $ cd test-project
 $ sbt
 ```
 
-In this example we 'll use a [Sleeper](https://github.com/whysoserious/sbt-process-runner/blob/master/test-project/project/Build.scala#L23-L28). Start SBT session and try following commands:
+In this example we 'll use a [Sleeper](https://github.com/whysoserious/sbt-process-runner/blob/master/test-project/project/Build.scala#L19-L24). Start SBT session and try following commands:
 
 ```bash
 # display available processRunners
@@ -147,7 +145,7 @@ In this example we 'll use a [Sleeper](https://github.com/whysoserious/sbt-proce
 
 ### Example 2: _Listener_
 
-Here, we 'll start a process which listens on a port: A [Listener](https://github.com/whysoserious/sbt-process-runner/blob/master/test-project/project/Build.scala#L35-L59).
+Here, we 'll start a process which listens on a port. A [Listener](https://github.com/whysoserious/sbt-process-runner/blob/master/test-project/project/Build.scala#L31-L55):
 
 ```bash
 # Check status
